@@ -1,0 +1,158 @@
+s
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryomen Sukuna — Magical Battle</title>
+  <meta name="description" content="Ryomen Sukuna — the King of Curses, the most fearsome cursed spirit in history." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Nunito:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --char-color: #e84040;
+    }
+
+    .char-hero {
+      background: radial-gradient(ellipse at 60% 40%, rgba(232, 64, 64, .2), transparent 60%), radial-gradient(ellipse at 30% 80%, rgba(80, 0, 0, .5), transparent 50%), var(--darker);
+    }
+
+    .char-name {
+      background: linear-gradient(135deg, #ff9090, var(--red), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .orb-ring {
+      border-color: var(--red) !important;
+    }
+
+    .char-wish {
+      border-left-color: var(--red);
+    }
+
+    .cstat {
+      border-color: rgba(232, 64, 64, .3);
+      color: var(--red);
+    }
+
+    .ability-card:hover {
+      border-color: var(--red);
+    }
+
+    .orb-core {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #ff9090, #e84040, #600000);
+      box-shadow: 0 0 60px rgba(232, 64, 64, .9), 0 0 120px rgba(232, 64, 64, .5);
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="starCanvas"></canvas>
+  <nav class="nav">
+    <div class="nav-logo"><span class="soul-gem red"></span>MAGICAL BATTLE</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="characters.html" class="active">Characters</a></li>
+      <li><a href="story.html">Story</a></li>
+    </ul>
+  </nav>
+
+  <section class="char-hero">
+    <div class="magic-circle mc-1"></div>
+    <div class="magic-circle mc-2"></div>
+    <div class="container">
+      <div class="char-visual">
+        <div class="char-orb">
+          <div class="orb-ring"></div>
+          <div class="orb-ring"></div>
+          <div class="orb-ring"></div>
+          <div class="orb-core"></div>
+        </div>
+      </div>
+      <div class="char-info">
+        <a href="characters.html" class="back-btn">← All Characters</a>
+        <p class="hero-eyebrow" style="margin-top:1.2rem;">King of Curses</p>
+        <h1 class="char-name">Ryomen Sukuna</h1>
+        <p class="char-title">The Undisputed Apex</p>
+        <p class="char-desc">1,000 years ago, Ryomen Sukuna was a human sorcerer so powerful that even after death, he
+          could not be destroyed. His fingers became cursed objects of immeasurable power. Reincarnated inside Yuji
+          Itadori, he watches, waits, and acts only for his own amusement — answering to no one.</p>
+        <div class="char-stats">
+          <span class="cstat">✦ Age: 1000+</span>
+          <span class="cstat">🗡️ Technique: Cleave &amp; Dismantle</span>
+          <span class="cstat">👁️ 4 Arms, 4 Eyes</span>
+          <span class="cstat">💀 Grade: Special Grade ∞</span>
+        </div>
+        <div class="char-wish">
+          <strong>His Nature</strong>
+          "I don't have allies. I don't have enemies. There is only what amuses me — and what does not."
+        </div>
+        <a href="characters.html" class="btn-primary" style="background:linear-gradient(135deg,#e84040,#800000);">View
+          All Characters</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="abilities section">
+    <div class="container">
+      <div class="section-label">Powers &amp; Abilities</div>
+      <h2 class="section-title">Sukuna's Arsenal</h2>
+      <div class="ability-grid">
+        <div class="ability-card">
+          <div class="ability-icon">🗡️</div>
+          <div class="ability-name">Dismantle</div>
+          <div class="ability-desc">An offensive slashing attack of pure cursed energy, Dismantle cuts through anything
+            — objects, curses, and sorcerers alike.</div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-icon">⚡</div>
+          <div class="ability-name">Cleave</div>
+          <div class="ability-desc">Adjusts automatically to the target's durability and cursed energy to deliver a
+            precisely lethal slash — no more, no less.</div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-icon">🏯</div>
+          <div class="ability-name">Malevolent Shrine</div>
+          <div class="ability-desc">Sukuna's domain expansion — an open-air shrine that continuously activates Dismantle
+            and Cleave on everything within range, with no escape.</div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-icon">🔥</div>
+          <div class="ability-name">Fire Arrow</div>
+          <div class="ability-desc">A technique stolen from Jogo — Sukuna wields fire with far greater power than the
+            original user, demonstrating his absurd talent.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quote-section">
+    <div class="magic-circle mc-small"></div>
+    <blockquote class="big-quote">
+      <p>"I am the honored one. Throughout heaven and earth, I alone am the honored one."</p>
+      <cite>— Ryomen Sukuna</cite>
+    </blockquote>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-gems">
+      <a href="madoka.html"><span class="soul-gem pink sm"></span></a>
+      <a href="homura.html"><span class="soul-gem purple sm"></span></a>
+      <a href="sayaka.html"><span class="soul-gem blue sm"></span></a>
+      <a href="mami.html"><span class="soul-gem gold sm"></span></a>
+      <a href="kyoko.html"><span class="soul-gem red sm"></span></a>
+    </div>
+    <p class="footer-text">Magical Battle — Jujutsu Kaisen Fan Site</p>
+    <p class="footer-sub">All rights belong to Gege Akutami / Shueisha</p>
+  </footer>
+  <script src="magic.js"></script>
+</body>
+
+</html>
