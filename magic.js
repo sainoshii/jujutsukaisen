@@ -118,30 +118,32 @@ document.addEventListener('click', (e) => {
 window.addEventListener('resize', () => { resize(); });
 
 // ── Scroll reveal ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('revealed');
-      observer.unobserve(e.target);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.stat, .char-card, .ability-card, .section-title, .section-text').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
   });
-}, { threshold: 0.15 });
 
-document.querySelectorAll('.stat, .char-card, .ability-card, .section-title, .section-text').forEach(el => {
-  el.classList.add('reveal');
-  observer.observe(el);
+  // Add reveal CSS dynamically
+  const style = document.createElement('style');
+  style.textContent = `
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.revealed { opacity: 1; transform: none; }
+    .char-card.reveal { transition-delay: calc(var(--i, 0) * 0.1s); }
+  `;
+  document.head.appendChild(style);
+
+  document.querySelectorAll('.char-card').forEach((el, i) => el.style.setProperty('--i', i));
 });
-
-// Add reveal CSS dynamically
-const style = document.createElement('style');
-style.textContent = `
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
-  .reveal.revealed { opacity: 1; transform: none; }
-  .char-card.reveal { transition-delay: calc(var(--i, 0) * 0.1s); }
-`;
-document.head.appendChild(style);
-
-document.querySelectorAll('.char-card').forEach((el, i) => el.style.setProperty('--i', i));
 
 init();
 loop();
